@@ -92,7 +92,17 @@ export default function LoginPage() {
 
                     {/* Password Input */}
                     <div className="mt-4 relative">
-                        <label className="block text-gray-700 font-semibold">Password</label>
+                        <div>
+                            <label className="block text-gray-700 font-semibold">Password</label>
+                            <button
+                                type="button"
+                                className="absolute right-3 top-0 text-gray-600 text-sm hover:text-blue-500"
+                                onClick={() => setShowPassword(!showPassword)}
+                            >
+                                Forgot password ?
+                            </button>
+
+                        </div>
                         <div className="relative">
                             <input
                                 type={showPassword ? "text" : "password"}
@@ -109,6 +119,7 @@ export default function LoginPage() {
                                 {showPassword ? <FaEyeSlash /> : <FaEye />}
                             </button>
                         </div>
+
                         {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password}</p>}
                     </div>
 
@@ -125,7 +136,7 @@ export default function LoginPage() {
                 <hr className="mt-5" />
                 <div className="flex justify-between mt-5 text-sm">
                     <p>Don't have an account?</p>
-                    <Link href="/register" className="text-blue-500">Get Registered</Link>
+                    <Link href="/register" className="hover:text-blue-500">Get Registered</Link>
                 </div>
             </div>
         </div>
